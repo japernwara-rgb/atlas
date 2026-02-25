@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>شركة أطلس الجبال - استيراد المواد الغذائية والمواشي واللحوم</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Arabic Support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Tailwind Configuration */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        :root {
+            --color-primary: #195A1E;
+            --color-primary-medium: #2E7D32;
+            --color-primary-light: #A5D6A7;
+            --color-primary-very-light: #C8E6C9;
+            --color-background: #F9F8F4;
+            --color-foreground: #1A3A1F;
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-foreground);
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Paper Grain Texture - The Soul of the Design */
+        .paper-texture {
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            opacity: 0.015;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        /* Smooth Animations */
+        * {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-background);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-medium);
+        }
+
+        /* Arch Image Shape */
+        .arch-image {
+            border-radius: 200px 200px 40px 40px;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Fade In Up Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Stagger Animation Delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        /* WhatsApp Button Pulse */
+        @keyframes pulse-green {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(46, 125, 50, 0);
+            }
+        }
+
+        .whatsapp-pulse {
+            animation: pulse-green 2s infinite;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        /* Hover Effects */
+        .card-hover {
+            transition: all 0.5s ease-out;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(25, 90, 30, 0.15);
+        }
+
+        .image-hover {
+            transition: transform 0.7s ease-out;
+        }
+
+        .image-hover:hover {
+            transform: scale(1.05);
+        }
+
+        /* Custom Button Styles */
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 48px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-medium);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(25, 90, 30, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            padding: 0.875rem 2rem;
+            border-radius: 9999px;
+            border: 2px solid var(--color-primary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 48px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .container-mobile {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+                line-height: 2.25rem;
+            }
+
+            .mobile-text-adjust {
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+        }
+
+        /* Prevent horizontal scroll */
+        .section-container {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Paper Grain Texture Overlay -->
+    <div class="paper-texture"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-[#F9F8F4]/95 backdrop-blur-sm border-b border-[#E6E2DA]">
+        <div class="w-full px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <img src="logo.png" alt="شركة أطلس الجبال" class="h-16 sm:h-20 md:h-24 w-auto">
+                    <div class="hidden sm:block">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#195A1E]">أطلس الجبال</h3>
+                        <p class="text-xs sm:text-sm text-[#2E7D32]">للاستيراد الغذائي</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+                    <a href="#home" class="text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium">الرئيسية</a>
+                    <a href="#about" class="text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium">من نحن</a>
+                    <a href="#services" class="text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium">خدماتنا</a>
+                    <a href="#products" class="text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium">منتجاتنا</a>
+                    <a href="#contact" class="text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium">اتصل بنا</a>
+                </div>
+
+                <!-- Contact Button (Desktop) -->
+                <a href="#contact" class="hidden lg:block btn-primary text-sm xl:text-base">
+                    تواصل معنا
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-[#C8E6C9] transition-colors duration-300">
+                    <i data-lucide="menu" class="w-6 h-6 sm:w-7 sm:h-7 text-[#195A1E]"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden absolute top-full left-0 right-0 bg-[#F9F8F4] border-b border-[#E6E2DA] shadow-lg">
+            <div class="px-4 sm:px-6 py-6 sm:py-8 space-y-3 sm:space-y-4">
+                <a href="#home" class="block text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium text-base sm:text-lg py-2">الرئيسية</a>
+                <a href="#about" class="block text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium text-base sm:text-lg py-2">من نحن</a>
+                <a href="#services" class="block text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium text-base sm:text-lg py-2">خدماتنا</a>
+                <a href="#products" class="block text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium text-base sm:text-lg py-2">منتجاتنا</a>
+                <a href="#contact" class="block text-[#195A1E] hover:text-[#2E7D32] transition-colors duration-300 font-medium text-base sm:text-lg py-2">اتصل بنا</a>
+                <a href="#contact" class="btn-primary w-full mt-4">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 md:pb-32 overflow-hidden section-container">
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+                <!-- Hero Content -->
+                <div class="space-y-6 sm:space-y-8 fade-in-up order-2 lg:order-1">
+                    <div class="inline-block">
+                        <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-[#C8E6C9] rounded-full text-[#195A1E] text-xs sm:text-sm font-medium">
+                            <i data-lucide="sparkles" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                            الجودة والثقة منذ التأسيس
+                        </span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#195A1E] leading-tight">
+                        شركة <span class="italic text-[#2E7D32]">أطلس الجبال</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl md:text-2xl text-[#2E7D32] leading-relaxed">
+                        لاستيراد المواد الغذائية والمواشي واللحوم عالية الجودة
+                    </p>
+
+                    <p class="text-base sm:text-lg text-[#195A1E]/80 leading-relaxed">
+                        نحن نفخر بتقديم أجود المنتجات الغذائية المستوردة، مع التزامنا الكامل بمعايير الجودة والسلامة الغذائية. شريككم الموثوق في توفير أفضل المواد الغذائية واللحوم الطازجة.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+                        <a href="#contact" class="btn-primary w-full sm:w-auto">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            اتصل بنا الآن
+                        </a>
+                        <a href="#products" class="btn-secondary w-full sm:w-auto">
+                            <i data-lucide="package" class="w-5 h-5"></i>
+                            تصفح منتجاتنا
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-[#E6E2DA]">
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#195A1E]">15+</div>
+                            <div class="text-xs sm:text-sm text-[#2E7D32] mt-1">سنوات خبرة</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#195A1E]">500+</div>
+                            <div class="text-xs sm:text-sm text-[#2E7D32] mt-1">عميل راضٍ</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#195A1E]">100%</div>
+                            <div class="text-xs sm:text-sm text-[#2E7D32] mt-1">جودة مضمونة</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative fade-in-up delay-200 order-1 lg:order-2">
+                    <div class="relative overflow-hidden arch-image">
+                        <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&h=1000&fit=crop"
+                             alt="منتجات غذائية طازجة"
+                             class="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover image-hover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#195A1E]/20 to-transparent"></div>
+                    </div>
+
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-8 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-xl float-animation hidden sm:block">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                            </div>
+                            <div>
+                                <div class="text-xl sm:text-2xl font-bold text-[#195A1E]">معتمدون</div>
+                                <div class="text-xs sm:text-sm text-[#2E7D32]">شهادات جودة دولية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 w-24 h-24 sm:w-32 sm:h-32 bg-[#C8E6C9] rounded-full opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 sm:w-40 sm:h-40 bg-[#A5D6A7] rounded-full opacity-20 blur-3xl"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-24 md:py-32 bg-white section-container">
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16 fade-in-up">
+                <span class="inline-block px-3 sm:px-4 py-2 bg-[#C8E6C9] rounded-full text-[#195A1E] text-xs sm:text-sm font-medium mb-4">
+                    من نحن
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#195A1E] mb-4 sm:mb-6">
+                    رحلتنا في <span class="italic text-[#2E7D32]">التميز</span>
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-[#195A1E]/80 max-w-3xl mx-auto leading-relaxed px-4">
+                    شركة أطلس الجبال هي واحدة من الشركات الرائدة في مجال استيراد وتوزيع المواد الغذائية واللحوم في ليبيا
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="space-y-4 sm:space-y-6 fade-in-up delay-100">
+                    <div class="flex gap-3 sm:gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                            <i data-lucide="target" class="w-5 h-5 sm:w-6 sm:h-6 text-[#195A1E]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-2">رؤيتنا</h3>
+                            <p class="text-sm sm:text-base text-[#2E7D32] leading-relaxed">
+                                أن نكون الخيار الأول والأكثر موثوقية في توفير المواد الغذائية عالية الجودة، مع الحفاظ على أعلى معايير السلامة والنظافة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 sm:gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                            <i data-lucide="compass" class="w-5 h-5 sm:w-6 sm:h-6 text-[#195A1E]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-2">مهمتنا</h3>
+                            <p class="text-sm sm:text-base text-[#2E7D32] leading-relaxed">
+                                تقديم منتجات غذائية متميزة تلبي احتياجات عملائنا، مع ضمان أفضل الأسعار والخدمة المتميزة في كل مرحلة من مراحل التوريد.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 sm:gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                            <i data-lucide="heart" class="w-5 h-5 sm:w-6 sm:h-6 text-[#195A1E]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-2">قيمنا</h3>
+                            <p class="text-sm sm:text-base text-[#2E7D32] leading-relaxed">
+                                الجودة، الأمانة، الشفافية، والالتزام بتقديم أفضل خدمة لعملائنا. نؤمن بأن رضا العميل هو مقياس نجاحنا الحقيقي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative fade-in-up delay-200">
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <div class="space-y-3 sm:space-y-4">
+                            <img src="https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?w=400&h=300&fit=crop"
+                                 alt="لحوم طازجة"
+                                 class="w-full h-40 sm:h-48 object-cover rounded-2xl sm:rounded-3xl image-hover">
+                            <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=400&h=400&fit=crop"
+                                 alt="مواد غذائية"
+                                 class="w-full h-52 sm:h-64 object-cover rounded-2xl sm:rounded-3xl image-hover">
+                        </div>
+                        <div class="space-y-3 sm:space-y-4 pt-6 sm:pt-8">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&h=400&fit=crop"
+                                 alt="خضروات طازجة"
+                                 class="w-full h-52 sm:h-64 object-cover rounded-2xl sm:rounded-3xl image-hover">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+                                 alt="منتجات متنوعة"
+                                 class="w-full h-40 sm:h-48 object-cover rounded-2xl sm:rounded-3xl image-hover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 sm:py-24 md:py-32 bg-[#F9F8F4] section-container">
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16 fade-in-up">
+                <span class="inline-block px-3 sm:px-4 py-2 bg-[#C8E6C9] rounded-full text-[#195A1E] text-xs sm:text-sm font-medium mb-4">
+                    خدماتنا
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#195A1E] mb-4 sm:mb-6">
+                    ما <span class="italic text-[#2E7D32]">نقدمه</span> لكم
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-[#195A1E]/80 max-w-3xl mx-auto leading-relaxed px-4">
+                    نوفر مجموعة شاملة من الخدمات لتلبية جميع احتياجاتكم الغذائية
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover fade-in-up delay-100">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i data-lucide="package-open" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-3 sm:mb-4">استيراد المواد الغذائية</h3>
+                    <p class="text-sm sm:text-base text-[#2E7D32] leading-relaxed mb-4 sm:mb-6">
+                        نستورد أجود أنواع المواد الغذائية من مصادر موثوقة حول العالم، مع ضمان الجودة والسلامة في كل مرحلة.
+                    </p>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            منتجات معتمدة دولياً
+                        </li>
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            تخزين آمن ومبرد
+                        </li>
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            توصيل سريع
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover fade-in-up delay-200 lg:translate-y-0 md:translate-y-0">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i data-lucide="beef" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-3 sm:mb-4">توريد اللحوم الطازجة</h3>
+                    <p class="text-sm sm:text-base text-[#2E7D32] leading-relaxed mb-4 sm:mb-6">
+                        نوفر أفضل أنواع اللحوم الطازجة والمجمدة من مصادر مضمونة، مع الحفاظ على أعلى معايير النظافة.
+                    </p>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            لحوم طازجة يومياً
+                        </li>
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            فحص بيطري شامل
+                        </li>
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            تغليف صحي محكم
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover fade-in-up delay-300">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                        <i data-lucide="truck" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-3 sm:mb-4">استيراد المواشي الحية</h3>
+                    <p class="text-sm sm:text-base text-[#2E7D32] leading-relaxed mb-4 sm:mb-6">
+                        نستورد المواشي الحية بأفضل المواصفات الصحية، مع توفير كافة الشهادات البيطرية المطلوبة.
+                    </p>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            مواشي صحية ومعتمدة
+                        </li>
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            نقل آمن ومريح
+                        </li>
+                        <li class="flex items-center gap-2 text-sm sm:text-base text-[#195A1E]">
+                            <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-[#2E7D32] flex-shrink-0"></i>
+                            أسعار تنافسية
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 sm:py-24 md:py-32 bg-white section-container">
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16 fade-in-up">
+                <span class="inline-block px-3 sm:px-4 py-2 bg-[#C8E6C9] rounded-full text-[#195A1E] text-xs sm:text-sm font-medium mb-4">
+                    منتجاتنا
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#195A1E] mb-4 sm:mb-6">
+                    تشكيلة <span class="italic text-[#2E7D32]">واسعة</span> من المنتجات
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-[#195A1E]/80 max-w-3xl mx-auto leading-relaxed px-4">
+                    نوفر مجموعة متنوعة من المنتجات الغذائية عالية الجودة
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+                <!-- Product Category 1 -->
+                <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl card-hover fade-in-up delay-100">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500&h=500&fit=crop"
+                             alt="لحوم حمراء"
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#195A1E]/90 via-[#195A1E]/50 to-transparent flex items-end p-4 sm:p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">اللحوم الحمراء</h3>
+                            <p class="text-xs sm:text-sm opacity-90">لحوم بقري وضأن طازجة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Category 2 -->
+                <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl card-hover fade-in-up delay-200">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500&h=500&fit=crop"
+                             alt="دواجن"
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#195A1E]/90 via-[#195A1E]/50 to-transparent flex items-end p-4 sm:p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">الدواجن</h3>
+                            <p class="text-xs sm:text-sm opacity-90">دجاج طازج ومجمد</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Category 3 -->
+                <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl card-hover fade-in-up delay-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=500&h=500&fit=crop"
+                             alt="منتجات غذائية"
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#195A1E]/90 via-[#195A1E]/50 to-transparent flex items-end p-4 sm:p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">المواد الغذائية</h3>
+                            <p class="text-xs sm:text-sm opacity-90">منتجات متنوعة ومعلبة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Category 4 -->
+                <div class="group relative overflow-hidden rounded-2xl sm:rounded-3xl card-hover fade-in-up delay-400">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&h=500&fit=crop"
+                             alt="مواشي حية"
+                             class="w-full h-full object-cover image-hover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#195A1E]/90 via-[#195A1E]/50 to-transparent flex items-end p-4 sm:p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">المواشي الحية</h3>
+                            <p class="text-xs sm:text-sm opacity-90">أغنام وأبقار صحية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-12 sm:mt-16">
+                <div class="text-center fade-in-up delay-100">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                    </div>
+                    <h4 class="text-base sm:text-lg font-bold text-[#195A1E] mb-1 sm:mb-2">جودة مضمونة</h4>
+                    <p class="text-xs sm:text-sm text-[#2E7D32]">منتجات معتمدة ومفحوصة</p>
+                </div>
+
+                <div class="text-center fade-in-up delay-200">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i data-lucide="thermometer-snowflake" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                    </div>
+                    <h4 class="text-base sm:text-lg font-bold text-[#195A1E] mb-1 sm:mb-2">تخزين مبرد</h4>
+                    <p class="text-xs sm:text-sm text-[#2E7D32]">مستودعات حديثة ومجهزة</p>
+                </div>
+
+                <div class="text-center fade-in-up delay-300">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i data-lucide="clock" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                    </div>
+                    <h4 class="text-base sm:text-lg font-bold text-[#195A1E] mb-1 sm:mb-2">توصيل سريع</h4>
+                    <p class="text-xs sm:text-sm text-[#2E7D32]">خدمة توصيل في الوقت المحدد</p>
+                </div>
+
+                <div class="text-center fade-in-up delay-400">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-[#C8E6C9] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i data-lucide="badge-check" class="w-6 h-6 sm:w-8 sm:h-8 text-[#195A1E]"></i>
+                    </div>
+                    <h4 class="text-base sm:text-lg font-bold text-[#195A1E] mb-1 sm:mb-2">شهادات دولية</h4>
+                    <p class="text-xs sm:text-sm text-[#2E7D32]">معتمدون من جهات عالمية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 sm:py-24 md:py-32 bg-[#F9F8F4] section-container">
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+                <div class="relative fade-in-up order-2 lg:order-1">
+                    <div class="relative overflow-hidden rounded-3xl sm:rounded-[40px]">
+                        <img src="https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?w=700&h=800&fit=crop"
+                             alt="لماذا نحن"
+                             class="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover image-hover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#195A1E]/30 to-transparent"></div>
+                    </div>
+
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-6 -left-4 sm:-bottom-8 sm:-left-8 bg-white p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-2xl">
+                        <div class="text-center">
+                            <div class="text-3xl sm:text-4xl font-bold text-[#195A1E] mb-1">98%</div>
+                            <div class="text-xs sm:text-sm text-[#2E7D32]">رضا العملاء</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 sm:space-y-8 fade-in-up delay-200 order-1 lg:order-2">
+                    <div>
+                        <span class="inline-block px-3 sm:px-4 py-2 bg-[#C8E6C9] rounded-full text-[#195A1E] text-xs sm:text-sm font-medium mb-4">
+                            لماذا تختارنا
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#195A1E] mb-4 sm:mb-6">
+                            نحن <span class="italic text-[#2E7D32]">الأفضل</span> في المجال
+                        </h2>
+                        <p class="text-base sm:text-lg md:text-xl text-[#195A1E]/80 leading-relaxed">
+                            نتميز بخبرتنا الطويلة والتزامنا الكامل بتقديم أفضل الخدمات لعملائنا
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 sm:space-y-6">
+                        <div class="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl card-hover">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                    <i data-lucide="award" class="w-5 h-5 sm:w-6 sm:h-6 text-[#195A1E]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-[#195A1E] mb-1 sm:mb-2">خبرة طويلة</h3>
+                                <p class="text-sm sm:text-base text-[#2E7D32]">أكثر من 15 عاماً من الخبرة في مجال الاستيراد والتوزيع</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl card-hover">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                    <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6 text-[#195A1E]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-[#195A1E] mb-1 sm:mb-2">فريق محترف</h3>
+                                <p class="text-sm sm:text-base text-[#2E7D32]">فريق عمل مدرب ومؤهل لتقديم أفضل خدمة</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl card-hover">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                    <i data-lucide="globe" class="w-5 h-5 sm:w-6 sm:h-6 text-[#195A1E]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-[#195A1E] mb-1 sm:mb-2">شبكة عالمية</h3>
+                                <p class="text-sm sm:text-base text-[#2E7D32]">شراكات مع أفضل الموردين حول العالم</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl card-hover">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                    <i data-lucide="headphones" class="w-5 h-5 sm:w-6 sm:h-6 text-[#195A1E]"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-[#195A1E] mb-1 sm:mb-2">دعم متواصل</h3>
+                                <p class="text-sm sm:text-base text-[#2E7D32]">خدمة عملاء متاحة على مدار الساعة لخدمتكم</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-24 md:py-32 bg-white section-container">
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16 fade-in-up">
+                <span class="inline-block px-3 sm:px-4 py-2 bg-[#C8E6C9] rounded-full text-[#195A1E] text-xs sm:text-sm font-medium mb-4">
+                    تواصل معنا
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#195A1E] mb-4 sm:mb-6">
+                    نحن <span class="italic text-[#2E7D32]">هنا</span> لخدمتكم
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-[#195A1E]/80 max-w-3xl mx-auto leading-relaxed px-4">
+                    تواصلوا معنا في أي وقت، فريقنا جاهز للإجابة على استفساراتكم
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-6 sm:space-y-8 fade-in-up delay-100">
+                    <!-- Phone Numbers -->
+                    <div class="bg-[#F9F8F4] p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                <i data-lucide="phone" class="w-6 h-6 sm:w-7 sm:h-7 text-[#195A1E]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-3 sm:mb-4">أرقام الهواتف</h3>
+                                <div class="space-y-2 sm:space-y-3">
+                                    <a href="tel:0911541100" class="flex items-center gap-2 sm:gap-3 text-[#2E7D32] hover:text-[#195A1E] transition-colors duration-300 text-base sm:text-lg group">
+                                        <i data-lucide="phone-call" class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0"></i>
+                                        <span dir="ltr">0911541100</span>
+                                    </a>
+                                    <a href="tel:0917279171" class="flex items-center gap-2 sm:gap-3 text-[#2E7D32] hover:text-[#195A1E] transition-colors duration-300 text-base sm:text-lg group">
+                                        <i data-lucide="phone-call" class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0"></i>
+                                        <span dir="ltr">0917279171</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bg-[#F9F8F4] p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                <i data-lucide="mail" class="w-6 h-6 sm:w-7 sm:h-7 text-[#195A1E]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-3 sm:mb-4">البريد الإلكتروني</h3>
+                                <a href="mailto:info@atlasco.com.ly" class="flex items-center gap-2 sm:gap-3 text-[#2E7D32] hover:text-[#195A1E] transition-colors duration-300 text-base sm:text-lg group break-all">
+                                    <i data-lucide="send" class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0"></i>
+                                    <span dir="ltr">info@atlasco.com.ly</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="bg-[#F9F8F4] p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-6 h-6 sm:w-7 sm:h-7 text-[#195A1E]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-3 sm:mb-4">الموقع</h3>
+                                <p class="text-[#2E7D32] text-base sm:text-lg leading-relaxed">
+                                    ليبيا - طرابلس
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div class="bg-[#F9F8F4] p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-[#C8E6C9] rounded-full flex items-center justify-center">
+                                <i data-lucide="clock" class="w-6 h-6 sm:w-7 sm:h-7 text-[#195A1E]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl sm:text-2xl font-bold text-[#195A1E] mb-3 sm:mb-4">ساعات العمل</h3>
+                                <div class="space-y-2 text-[#2E7D32] text-sm sm:text-base">
+                                    <p class="flex justify-between">
+                                        <span>السبت - الخميس:</span>
+                                        <span dir="ltr">8:00 - 17:00</span>
+                                    </p>
+                                    <p class="flex justify-between">
+                                        <span>الجمعة:</span>
+                                        <span>مغلق</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="fade-in-up delay-200">
+                    <div class="bg-[#F9F8F4] p-3 sm:p-4 rounded-2xl sm:rounded-3xl h-full">
+                        <div class="rounded-xl sm:rounded-2xl overflow-hidden h-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.6612773092515!2d14.609158275488845!3d32.41291967381795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13a697003e17fea7%3A0x2c02b5ac32855b5c!2z2K7ZhNmBINin2YTZhNmHINin2YTZh9in2K_Zig!5e1!3m2!1sen!2sly!4v1772058984293!5m2!1sen!2sly"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="w-full h-full">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-24 md:py-32 bg-[#195A1E] relative overflow-hidden section-container">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-[#2E7D32] rounded-full opacity-20 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-[#2E7D32] rounded-full opacity-20 blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+            <div class="text-center fade-in-up">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+                    هل أنتم مستعدون <span class="italic text-[#A5D6A7]">للبدء؟</span>
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
+                    تواصلوا معنا اليوم واحصلوا على أفضل العروض والخدمات المتميزة
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                    <a href="tel:0911541100" class="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-[#195A1E] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[#C8E6C9] transition-all duration-300 hover:-translate-y-1 shadow-xl min-h-[48px]">
+                        <i data-lucide="phone" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        اتصل بنا الآن
+                    </a>
+                    <a href="https://wa.me/218911541100" target="_blank" class="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#25D366] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-[#20BA5A] transition-all duration-300 hover:-translate-y-1 shadow-xl min-h-[48px]">
+                        <i data-lucide="message-circle" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        واتساب
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1A3A1F] text-white py-12 sm:py-16 section-container">
+        <div class="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
+                <!-- Company Info -->
+                <div class="sm:col-span-2">
+                    <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                        <img src="logo.png" alt="شركة أطلس الجبال" class="h-14 sm:h-16 w-auto">
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white">أطلس الجبال</h3>
+                            <p class="text-[#A5D6A7] text-xs sm:text-sm">للاستيراد الغذائي</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                        شركة رائدة في مجال استيراد المواد الغذائية والمواشي واللحوم، نلتزم بتقديم أعلى معايير الجودة والخدمة لعملائنا.
+                    </p>
+                    <div class="flex gap-3 sm:gap-4">
+                        <a href="https://wa.me/218911541100" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 bg-[#2E7D32] rounded-full flex items-center justify-center hover:bg-[#25D366] transition-all duration-300 hover:-translate-y-1">
+                            <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </a>
+                        <a href="tel:0911541100" class="w-10 h-10 sm:w-12 sm:h-12 bg-[#2E7D32] rounded-full flex items-center justify-center hover:bg-[#A5D6A7] transition-all duration-300 hover:-translate-y-1">
+                            <i data-lucide="phone" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </a>
+                        <a href="mailto:info@atlasco.com.ly" class="w-10 h-10 sm:w-12 sm:h-12 bg-[#2E7D32] rounded-full flex items-center justify-center hover:bg-[#A5D6A7] transition-all duration-300 hover:-translate-y-1">
+                            <i data-lucide="mail" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-[#A5D6A7]">روابط سريعة</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="#home" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 text-sm sm:text-base">الرئيسية</a></li>
+                        <li><a href="#about" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 text-sm sm:text-base">من نحن</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 text-sm sm:text-base">خدماتنا</a></li>
+                        <li><a href="#products" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 text-sm sm:text-base">منتجاتنا</a></li>
+                        <li><a href="#contact" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 text-sm sm:text-base">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-[#A5D6A7]">معلومات التواصل</h4>
+                    <ul class="space-y-3 sm:space-y-4">
+                        <li class="flex items-start gap-2 sm:gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 sm:w-5 sm:h-5 text-[#A5D6A7] flex-shrink-0 mt-1"></i>
+                            <div class="space-y-1">
+                                <a href="tel:0911541100" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 block text-sm sm:text-base" dir="ltr">0911541100</a>
+                                <a href="tel:0917279171" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 block text-sm sm:text-base" dir="ltr">0917279171</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2 sm:gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 sm:w-5 sm:h-5 text-[#A5D6A7] flex-shrink-0 mt-1"></i>
+                            <a href="mailto:info@atlasco.com.ly" class="text-white/80 hover:text-[#A5D6A7] transition-colors duration-300 text-sm sm:text-base break-all" dir="ltr">info@atlasco.com.ly</a>
+                        </li>
+                        <li class="flex items-start gap-2 sm:gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 sm:w-5 sm:h-5 text-[#A5D6A7] flex-shrink-0 mt-1"></i>
+                            <span class="text-white/80 text-sm sm:text-base">ليبيا - طرابلس</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-6 sm:pt-8">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+                    <p class="text-white/60 text-xs sm:text-sm text-center sm:text-right">
+                        © 2024 شركة أطلس الجبال. جميع الحقوق محفوظة.
+                    </p>
+                    <p class="text-white/60 text-xs sm:text-sm text-center sm:text-left">
+                        صُمم بـ <span class="text-[#A5D6A7]">❤</span> لخدمة عملائنا الكرام
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/218911541100"
+       target="_blank"
+       class="fixed bottom-6 left-6 sm:bottom-8
+You: complete from the same point you sttoped
+AI THINKING...AI: ```html
+ sm:left-8 z-50 w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 whatsapp-pulse group"
+       aria-label="تواصل معنا عبر واتساب">
+        <i data-lucide="message-circle" class="w-7 h-7 sm:w-8 sm:h-8 text-white group-hover:scale-110 transition-transform duration-300"></i>
+        <span class="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-5 h-5 sm:w-6 sm:h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold animate-pulse">!</span>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top"
+            class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 w-12 h-12 sm:w-14 sm:h-14 bg-[#195A1E] rounded-full flex items-center justify-center shadow-xl hover:bg-[#2E7D32] transition-all duration-300 opacity-0 pointer-events-none"
+            aria-label="العودة للأعلى">
+        <i data-lucide="arrow-up" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('[data-lucide]');
+            const isOpen = mobileMenu.classList.contains('active');
+            icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('[data-lucide]');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scroll-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Navbar Background on Scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Intersection Observer for Fade In Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease-in';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Parallax Effect for Hero Section (disabled on mobile for performance)
+        if (window.innerWidth > 768) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.float-animation');
+                parallaxElements.forEach(el => {
+                    const speed = 0.5;
+                    el.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+        }
+
+        // Add hover effect to cards (only on non-touch devices)
+        if (!('ontouchstart' in window)) {
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        }
+
+        // Lazy Loading for Images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add active state to navigation links based on scroll position
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-[#2E7D32]', 'font-bold');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-[#2E7D32]', 'font-bold');
+                }
+            });
+        });
+
+        // Add counter animation for stats
+        const animateCounter = (element, target, duration = 2000) => {
+            let start = 0;
+            const increment = target / (duration / 16);
+
+            const updateCounter = () => {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start) + '+';
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + '+';
+                }
+            };
+
+            updateCounter();
+        };
+
+        // Observe stats and animate when visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.text-2xl, .text-3xl, .text-4xl');
+                    statNumbers.forEach(statNumber => {
+                        if (!statNumber.classList.contains('animated')) {
+                            const text = statNumber.textContent.replace('+', '').replace('%', '');
+                            const target = parseInt(text);
+                            if (!isNaN(target)) {
+                                const isPercentage = statNumber.textContent.includes('%');
+                                animateCounter(statNumber, target);
+                                if (isPercentage) {
+                                    setTimeout(() => {
+                                        statNumber.textContent = target + '%';
+                                    }, 2000);
+                                }
+                                statNumber.classList.add('animated');
+                            }
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.grid.grid-cols-3, .grid.grid-cols-2').forEach(grid => {
+            statsObserver.observe(grid);
+        });
+
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                window.scrollTo(0, window.pageYOffset);
+            }, 100);
+        });
+
+        // Optimize scroll performance
+        let ticking = false;
+        let lastScrollY = window.pageYOffset;
+
+        window.addEventListener('scroll', function() {
+            lastScrollY = window.pageYOffset;
+
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    // Scroll-based animations here
+                    ticking = false;
+                });
+
+                ticking = true;
+            }
+        });
+
+        // Console welcome message
+        console.log('%c🌿 شركة أطلس الجبال', 'color: #195A1E; font-size: 24px; font-weight: bold;');
+        console.log('%cللاستيراد الغذائي - جودة تثق بها', 'color: #2E7D32; font-size: 14px;');
+
+        // Reinitialize icons after any dynamic content changes
+        const reinitIcons = () => {
+            lucide.createIcons();
+        };
+
+        // Call reinitialize after page load
+        setTimeout(reinitIcons, 500);
+
+    </script>
+</body>
+</html>
